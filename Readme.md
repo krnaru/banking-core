@@ -26,7 +26,15 @@ Otherwise Docker will do.
 
 # Estimation
 ### Estimate on how many transactions can your account application can handle per second on your development machine
-Around a few hundred, let's say 200 requests as that's the Spring Boot has a max default cap of 200 threads. 
+Thousands. Testing the application with creating an account with a sample request as such:
+```
+{
+	"customerId": "${req}",
+	"country": "USA",
+	"currencies": [ "USD", "EUR"]
+}
+```
+With a 1000 threads per second got a 0% error rate. 
 
 ### Describe what do you have to consider to be able to scale applications horizontally
 - Definitely would add caching for frequently accessed data (accounts, maybe by account Id?) to reduce the load on the database.
