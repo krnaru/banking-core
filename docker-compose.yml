@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: corebanking
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+      
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672" 
+      - "15672:15672" #UI
+    environment:
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: password
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    restart: unless-stopped
+
+  app:
+    image: corebanking-app
+    depends_on:
+      - db
+      - rabbitmq
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+  rabbitmq_data:
