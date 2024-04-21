@@ -10,7 +10,7 @@ Otherwise Docker will do.
 
 ### Instructions
 
-1. navigate into the source folder ```(./CoreBanking)``` and run the following command:
+1. navigate into the source folder ```(./banking-app (for my case))``` and run the following command:
    - ```docker build -t core-banking .``` to build the docker image
    - ```docker-compose up``` to run the app, database and RabbitMQ
 2. The application will be running on port 8080, so http://localhost:8080 would be used to test endpoints.
