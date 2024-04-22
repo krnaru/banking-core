@@ -16,7 +16,10 @@ To run the application, you need to have the following installed on your machine
 2. The application will be running on port 8080, so http://localhost:8080 would be used to test endpoints.
 3. To stop the application, run ```docker-compose down```
 
+### Common problems
 
+- ```ERROR COPY build/libs/CoreBanking-0.0.1-SNAPSHOT.jar /app/app.jar``` -> Java not configured. Verify Project SDK is using JDK v21 (Project structure -> Project -> SDK). Run ```docker build -t core-banking .``` again.
+- Postgres is running on port 5432: Run ```sudo kill -9 537``` verify nothing is running with ```sudo lsof -i :5432```
 
 # Important choices
 1. I chose to use Spring Boot for this project because it is easy to set up and has a lot of features that make it easy to build a microservice.
