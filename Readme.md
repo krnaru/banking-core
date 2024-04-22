@@ -6,6 +6,8 @@ To run the application, you need to have the following installed on your machine
 <li>Docker</li>
 </ol>
 
+**Application needs to have Java 21 JDK configured as SDK**
+
 ### Instructions
 
 1. navigate into the source folder ```(./banking-core (for my case))``` and run the following command:
