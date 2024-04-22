@@ -41,8 +41,8 @@ With a 1000 threads per second got a 0% error rate.
 
 ### Describe what do you have to consider to be able to scale applications horizontally
 - Definitely would add caching for frequently accessed data (accounts, maybe by account Id?) to reduce the load on the database.
-- Should use load balancers to distribute incoming network traffic across multiple instances of your application. That would require mostly deploying the app using something like kubernetes.
+- Should use load balancers to distribute incoming network traffic across multiple instances of the application. That would require mostly deploying the app using something like kubernetes.
 - Session state, if needed, should be managed in a centralized data store accessible by all instances.
 - Utilizing read replicas for load distribution in database accesses and consider partitioning data if applicable.
 - RabbitMQ should be clustered to handle increased loads and ensure high availability and fault tolerance.
-- If applicable, break down the application into microservices to scale different components independently based on load.
+- If applicable, would break down the application into microservices to scale different components independently based on load. Once the application grows by endpoints and external service dependecies (e.g. SSO service for authorization), it would make sense to distribute the load between services.
