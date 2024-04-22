@@ -1,12 +1,10 @@
 # Running the application
 
-To run the dev environment application, you need to have the following installed on your machine:
+To run the application, you need to have the following installed on your machine:
 <ol>
 <li>Java JDK 21</li>
 <li>Docker</li>
 </ol>
-
-Otherwise Docker will do.
 
 ### Instructions
 
