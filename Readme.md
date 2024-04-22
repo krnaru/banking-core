@@ -11,7 +11,7 @@ To run the application, you need to have the following installed on your machine
 ### Instructions
 
 1. navigate into the source folder ```(./banking-core (for my case))``` and run the following command:
-   - ```./gradlew build``` build 
+   - ```./gradlew build -x test``` build 
    - ```docker build -t core-banking .``` to build the docker image
    - ```docker-compose up``` to run the app, database and RabbitMQ
 3. The application will be running on port 8080, so http://localhost:8080 would be used to test endpoints.
