@@ -14,13 +14,13 @@ import org.springframework.beans.factory.annotation.Value;
  */
 public class DatabaseConfig {
 
-    @Value("${database.url}")
+    @Value("${spring.datasource.url}")
     private String dbUrl;
 
-    @Value("${database.username}")
+    @Value("${spring.datasource.username}")
     private String dbUsername;
 
-    @Value("${database.password}")
+    @Value("${spring.datasource.password}")
     private String dbPassword;
 
     /**

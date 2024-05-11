@@ -9,3 +9,4 @@ INSERT INTO balance (id, account_id, available_amount, currency) VALUES
      (3, 3, 1500.0000, 'GBP');
 
 SELECT setval('account_id_seq', (SELECT MAX(id) FROM account));
+SELECT setval('balance_id_seq', (SELECT MAX(id) FROM balance));

@@ -41,7 +41,8 @@ dependencies {
     testImplementation 'org.springframework.amqp:spring-rabbit-test'
     testImplementation 'org.testcontainers:junit-jupiter:1.15.3'
     testImplementation 'org.testcontainers:postgresql:1.15.3'
-    testImplementation 'org.testcontainers:rabbitmq:1.15.3'
+    testImplementation 'org.testcontainers:rabbitmq:1.17.3'
+    testImplementation 'org.testcontainers:testcontainers:1.16.0'
 }
 
 jacocoTestReport {

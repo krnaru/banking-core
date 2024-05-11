@@ -3,7 +3,9 @@ package org.example.corebanking.integration;
 import org.example.corebanking.domain.enums.TransactionDirection;
 import org.example.corebanking.domain.request.TransactionRequest;
 import org.example.corebanking.domain.response.Transaction;
+import org.example.corebanking.integration.util.TestContainersConfig;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -11,15 +13,18 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
 import java.math.BigDecimal;
 import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Testcontainers
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
-public class TransactionIntegrationTests {
+public class TransactionIntegrationTests extends TestContainersConfig {
 
     @Autowired
     private TestRestTemplate restTemplate;
